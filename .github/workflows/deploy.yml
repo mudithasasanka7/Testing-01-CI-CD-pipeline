@@ -34,7 +34,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "build/*"
-          target: "/home/ubuntu/react-app"
+          target: "/home/ubuntu/Testing-01-CI-CD-pipeline"
 
       - name: Start with PM2
         uses: appleboy/ssh-action@v1.0.0
@@ -43,7 +43,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/ubuntu/react-app
-            npm install -g serve
+            cd /home/ubuntu/Testing-01-CI-CD-pipeline
             pm2 delete react-app || true
-            pm2 start serve --name react-app -- -s . -l 3000
+            pm2 start "npx serve -s build -l 3000" --name react-app
+
