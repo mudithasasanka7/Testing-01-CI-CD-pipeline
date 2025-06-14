@@ -45,5 +45,5 @@ jobs:
           script: |
             cd /home/ubuntu/Testing-01-CI-CD-pipeline
             pm2 delete react-app || true
-            pm2 start "npx serve -s ." --name react-app
+            pm2 start "npx serve -s build -l 3000" --name react-app
 
