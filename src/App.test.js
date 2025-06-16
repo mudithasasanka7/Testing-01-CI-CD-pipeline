@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders Hello React', () => {
+test('renders Sri Lanka Tourism title', () => {
   render(<App />);
-  const heading = screen.getByText(/Hello React/i);
+  const heading = screen.getByText(/Welcome to Sri Lanka Tourism/i);
   expect(heading).toBeInTheDocument();
 });
